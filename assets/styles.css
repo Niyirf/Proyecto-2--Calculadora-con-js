@@ -1,0 +1,251 @@
+* {
+    padding: 100;
+    margin: 0;
+    box-sizing: border-box;
+    outline: 0;
+    transition: all 0.5s ease;
+}
+
+body {
+  height: 569px;
+  width: auto;
+  font-family: sans-serif;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient( to bottom right, #2e1f39,#aa00a4);
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.previous-operand  {
+    width: 300px;
+    height: 55px;
+    display: grid;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #fd89f483;
+}
+
+.current-operand  {
+  width: 300px;
+  height: 30px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #c3eaffab;
+}
+
+.calculator {
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px #8f628b;
+}
+
+.theme-toggler {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.theme-toggler.active::before {
+    background-color: #fff;
+}
+
+.theme-toggler::before {
+    content: '';
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #333;
+    z-index: -1;
+}
+
+#result {
+    margin: 0 10px;
+    height: 150px;
+    width: auto;
+    max-width: 270px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 30px;
+    margin-bottom: 20px;
+    overflow-x: scroll;
+  }
+
+#result::-webkit-scrollbar {
+    display: block;
+    height: 3px;
+}
+
+button {
+    height: 60px;
+    width: 60px;
+    border: 0;
+    border-radius: 30px;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+button#equals {
+    height: 130px;
+}
+
+/* light theme */
+
+.calculator {
+    background-color: #fff;
+}
+
+.calculator #result {
+    color: #0a1e23;
+}
+
+.calculator button#clear {
+    background-color: #ffd5d8;
+    color: #fc4552;
+}
+
+.calculator button.btn-number {
+    background-color: #c3eaff;
+    color: #000000;
+}
+
+.calculator button.btn-operator {
+    background-color: #ffd0fb;
+    color: #f967f3;
+  }
+  
+  .calculator button.btn-equal {
+    background-color: #adf9e7;
+    color: #000;
+  }
+
+  /* dark theme */
+
+  .calculator.dark {
+    background-color: #071115;
+  }
+
+  .calculator.dark #result {
+    color: #f8fafb;
+  }
+
+  .calculator.dark button#clear {
+    background-color: #2d191e;
+    color: #bd3740;
+  }
+
+  .calculator.dark button.btn-number {
+    background-color: #1b2f38;
+    color: #f8fafb;
+  }
+
+  .calculator.dark button.btn-operator {
+    background-color: #2e1f39;
+    color: #aa00a4;
+  }
+  
+  .calculator.dark button.btn-equal {
+    background-color: #223323;
+    color: #ffffff;
+  }
+
+  
+  /*juego*/
+
+  .table {
+    overflow: hidden;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+.cell {
+    border-right: 2px solid #D7D9B1;
+    border-bottom: 2px solid #D7D9B1;
+    width: 133px;
+    height: 133px;
+    text-align: center;
+    font-size: 7em;
+    line-height: 1.3em;
+    vertical-align: bottom;
+    color: #F4B266;
+}
+.row:last-of-type .cell {
+    border-right: none;
+}
+.row .cell:last-of-type {
+    border-bottom: none;
+}
+.x-marker {
+    color: #48A9A6;
+}
+.o-marker {
+    color: #F4B266
+}
+.popup {
+    position:fixed;
+    background: rgba(28, 10, 29, 0.2);
+    z-index: 15;
+    width: 100%;
+    height: 200%;
+    top: 0;
+    left: 0;
+    display:vblock;
+    
+}
+.modal {
+    z-index: 500;
+    position: relative;
+    top: 175px;
+    margin: 0 auto;
+    border-radius: 20px;
+    background-color: #5e3a7ad5;
+    box-shadow: 0 0 4px 1px #f9cefd;
+    padding: 35px;
+    width: 220px;
+    color: white;
+    text-align: center;
+    transition: all 2s;
+}
+.modal .winner-message {
+    margin: 0;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+.modal .start-btn {
+    padding: 10px;
+    border: 2px solid #440052f8;
+    border-radius: 20px;
+}
+.modal .start-btn:hover {
+    color: rgba(152, 0, 172, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+ 
